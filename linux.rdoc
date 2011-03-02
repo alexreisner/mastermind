@@ -16,3 +16,10 @@ Upload a directory structure (recursively) and make all files publicly readable:
 
   s3cmd put -P --recursive <files> s3://<bucket>/<path>
 
+== PDF Page Extraction
+
+Extract three pages from a PDF:
+
+  pdftk orig.pdf cat 4-6 output out.pdf
+
+
