@@ -6,3 +6,10 @@
 
 To enable offline email for users you must enable it under Services > Email and also check "Enable pre-release features" under Domain Settings.
 
+=== Fixing "This domain has been disabled"
+
+If you let a Google Apps Premier/Business account expire and expect to use it for free (as they clearly state you can) you may be in for a nasty surprise when, a few days after it expires, you can't access your account (logging in gives you only a page with the above error message). To fix this, you have to manually downgrade your account by going to:
+
+https://www.google.com/a/yourdomain.com/admin
+
+They don't tell you this anywhere (that I've seen) and I only found it after reading through many useless whiny support forum discussions. It's remarkable that Google haven't updated their automated emails (or the web app!) as this problem appears to have existed at least as early as April 2009.
