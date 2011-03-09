@@ -22,4 +22,6 @@ Extract three pages from a PDF:
 
   pdftk orig.pdf cat 4-6 output out.pdf
 
+Build a PDF with pages from two documents:
 
+  pdftk A=1.pdf B=2.pdf cat A B1-3 output comp.pdf
