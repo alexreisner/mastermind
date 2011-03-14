@@ -56,6 +56,8 @@ On a topic branch, see what commits have not been merged into master:
 
   git cherry -v master
 
+Commits are compared by content, not ID, so lines that start with a "-" show commits which exist in master but with a different commit ID, while lines that start with a "+" have no equivalent commit upstream.
+
 
 == View Un-pushed Commits
 
