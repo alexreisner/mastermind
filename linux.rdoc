@@ -33,6 +33,6 @@ Build a PDF with pages from two documents:
 Explanation:
 
 * <tt>-depth</tt> - process directory contents before directory itself; remove subdirs before trying to remove dir
-* <tt>-exec rmdir {} \;</tt> - execute the rmdir command on each matched file from the directory containing the matched file
+* <tt>-exec rmdir {} \;</tt> - execute the +rmdir+ command on each matched file from the directory containing the matched file (<tt>\;</tt> is always necessary to terminate <tt>-exec</tt> argument)
 
 Taken from: http://nixcraft.com/getting-started-tutorials/1432-linux-delete-empty-directories.html
