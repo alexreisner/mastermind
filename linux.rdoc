@@ -25,3 +25,14 @@ Extract three pages from a PDF:
 Build a PDF with pages from two documents:
 
   pdftk A=1.pdf B=2.pdf cat A B1-3 output comp.pdf
+
+== Recursively Delete Empty Directories
+
+  find . -depth -type d -empty -exec rmdir {} \;
+
+Explanation:
+
+* <tt>-depth</tt> - process directory contents before directory itself; remove subdirs before trying to remove dir
+* <tt>-exec rmdir {} \;</tt> - execute the rmdir command on each matched file from the directory containing the matched file
+
+Taken from: http://nixcraft.com/getting-started-tutorials/1432-linux-delete-empty-directories.html
