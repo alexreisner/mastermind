@@ -184,6 +184,12 @@ The following used to be necessary but don't seem to be anymore:
   sudo apt-get install -y libcurl4-openssl-dev
   passenger-install-apache2-module
 
+=== Python
+
+Development headers:
+
+  sudo apt-get install -y python2.6-dev
+
 === PHP
 
 Note that this downgrades you to the old Apache prefork MPM.
