@@ -141,12 +141,16 @@ And restart the server:
   sudo restart mysql             # for Lucid
   sudo /etc/init.d/mysql restart # for pre-Lucid
 
+=== PostgreSQL
+
+  sudo apt-get -y install postgresql
+
 === SQLite
 
   sudo apt-get -y install sqlite3
 
 
-== Ruby
+== Ruby (1.8 - Ruby Enterprise Edition with Passenger)
 
   sudo apt-get install libreadline-ruby1.8
 
