@@ -1,7 +1,0 @@
-= xargs
-
-"Argument list too long" error workaround:
-
-  ls [source_dir] | xargs -n 50 cp -r --target-directory=[target_dir]
-
-
