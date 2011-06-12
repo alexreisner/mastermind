@@ -76,17 +76,6 @@ Install web server and basic tools like logrotate, curl, Git, etc:
 
   sudo apt-get -y install apache2-mpm-worker apache2-threaded-dev
 
-To GZip components, enable Apache's mod_deflate for CSS and JS:
-
-  cd /etc/apache2/mods-enabled
-  sudo ln -s ../mods-available/deflate.load
-  sudo ln -s ../mods-available/deflate.conf
-
-In mods-available/deflate.conf, add <tt>text/css application/x-javascript</tt>:
-
-  cd /etc/apache2/mods-available
-  sudo sed -i 's/text\/xml/text\/xml text\/css application\/x-javascript application\/javascript/g' deflate.conf
-
 To add a far future 'Expires' header:
 
   cd /etc/apache2/mods-enabled
