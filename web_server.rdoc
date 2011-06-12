@@ -150,7 +150,9 @@ And restart the server:
   sudo apt-get -y install sqlite3
 
 
-== Ruby (1.8 - Ruby Enterprise Edition with Passenger)
+== Ruby
+
+=== 1.8 Ruby Enterprise Edition with Passenger
 
   sudo apt-get install libreadline-ruby1.8
 
@@ -166,11 +168,29 @@ SQLite support:
 
   sudo apt-get build-dep libsqlite3-ruby1.8
 
-=== Passenger
+=== 1.9.2
+
+  sudo apt-get install libreadline-ruby1.9
+
+  cd /usr/local/src
+  sudo wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p180.tar.gz
+  tar xf ruby-1.9.2-p180.tar.gz
+  cd ruby-1.9.2-p180
+  ./configure
+  make
+  sudo make install
+
+=== Gems
+
+  echo 'gem: --no-ri --no-rdoc' > ~/.gemrc
+  sudo gem update --system
+
+
+== Passenger
 
   sudo apt-get install libssl-dev
 
-==== for Apache
+=== for Apache
 
 Install:
 
@@ -180,17 +200,23 @@ Configure:
 
   sudo vi /etc/apache2/mods-available/passenger.load
 
-  # add lines:
+  # add:
   LoadModule passenger_module /usr/local/lib/ruby/gems/1.8/gems/passenger-2.2.9/ext/apache2/mod_passenger.so
   PassengerRoot /usr/local/lib/ruby/gems/1.8/gems/passenger-2.2.9
   PassengerRuby /usr/local/bin/ruby
 
-Create symlink and restart Apache:
+  sudo vi /etc/apache2/mods-available/passenger.load
+
+  # add:
+  PassengerPoolIdleTime 0
+
+Create symlinks and restart Apache:
 
   sudo ln -s /etc/apache2/mods-available/passenger.load /etc/apache2/mods-enabled/passenger.load
+  sudo ln -s /etc/apache2/mods-available/passenger.conf /etc/apache2/mods-enabled/passenger.conf
   sudo apache2ctl graceful
 
-==== for Nginx
+=== for Nginx
 
 Install:
 
@@ -209,15 +235,6 @@ Control/start on boot with Upstart:
   expect fork
   respawn
   exec /opt/nginx/sbin/nginx
-
-
-=== Gems
-
-  sudo gem update --system
-  sudo gem install ruby-debug pony chronic whenever
-
-  # if using SQLite (MySQL gem installed automatically by Phusion):
-  sudo gem install sqlite3-ruby
 
 
 == Postfix
