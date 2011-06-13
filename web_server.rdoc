@@ -84,15 +84,7 @@ To add a far future 'Expires' header:
 
 X-Sendfile module:
 
-  cd /usr/local/src
-  sudo wget http://tn123.ath.cx/mod_xsendfile/mod_xsendfile-0.9.tar.gz
-  sudo tar -xf mod_xsendfile-0.9.tar.gz
-  cd mod_xsendfile-0.9
-  sudo apxs2 -cia mod_xsendfile.c
-  sudo echo 'LoadModule xsendfile_module /usr/lib/apache2/modules/mod_xsendfile.so' \
-    > /etc/apache2/mods-available/xsendfile.load
-  cd /etc/apache2/mods-enabled
-  sudo ln -s ../mods-available/xsendfile.load
+  sudo apt-get -y install libapache2-mod-xsendfile
 
 Allow VirtualHosts only on port 80:
 
