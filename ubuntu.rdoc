@@ -221,6 +221,15 @@ Install the latest stable release:
   make
   sudo make install
 
+=== png2ico
+
+  cd /usr/local/src
+  wget http://www.winterdrache.de/freeware/png2ico/data/png2ico-src-2002-12-08.tar.gz
+  tar xf png2ico-src-2002-12-08.tar.gz
+  cd png2ico-src-2002-12-08
+  make
+  cp png2ico /usr/local/bin/
+
 === VirtualBox
 
   sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian maverick non-free"
