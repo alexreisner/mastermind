@@ -314,11 +314,11 @@ Dump all MySQL databases, then backup directory contents:
     share/
       applications/
         gvim.desktop
-      mime/
-        packages/rails.xml    # then: sudo update-mime-database /usr/share/mime
       gtksourceview-2.0/language-specs/
         erb.lang
         yaml.lang
+      mime/
+        packages/rails.xml    # then: sudo update-mime-database /usr/share/mime
 
 
 == Old Stuff
