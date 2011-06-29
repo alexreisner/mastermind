@@ -320,20 +320,3 @@ Dump all MySQL databases, then backup directory contents:
       mime/
         packages/rails.xml    # then: sudo update-mime-database /usr/share/mime
 
-
-== Old Stuff
-
-  # OpenOffice/ODBC
-  sudo apt-get install -y unixodbc libmyodbc unixodbc-bin
-  # Configure ODBC connections (from http://www.linux.com/feature/60185):
-  sudo ODBCConfig
-  # Click the System DSN tab and click the Add button.
-  # Click Add again to create a new ODBC driver.
-  # Name: MySQL ODBC Driver
-  # Driver: /usr/lib/odbc/libmyodbc.so
-  # Setup: /usr/lib/odbc/libodbcmyS.so
-  # Click the Save and Exit button (check) to save the settings.
-  # Click OK to open the Data Source Properties window.
-  # Specify name, server address, db name, etc.
-
-
