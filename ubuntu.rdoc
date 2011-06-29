@@ -158,9 +158,9 @@ And restart the server:
 
 === Ruby (via Ruby Version Manager)
 
-See http://rvm.beginrescueend.com/rvm/install for latest install procedure. On May 5, 2010 it was:
+See http://rvm.beginrescueend.com/rvm/install for latest install procedure. On June 29, 2011 it was:
 
-  bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
+  bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
 
 Then be sure to follow the instructions for modifying <tt>.bashrc</tt>.
 
