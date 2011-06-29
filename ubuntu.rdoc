@@ -204,8 +204,9 @@ Install 10gen's public GPG key:
 
   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
 
-Install the latest stable release:
+Update sources and install the latest stable release:
 
+  sudo apt-get update
   sudo apt-get install -y mongodb-stable
 
 
