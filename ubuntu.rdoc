@@ -27,6 +27,14 @@ Launch the Configuration Editor (Alt+F2, then type 'gconf-editor').
     default_zoom_level: smallest
 
 
+== Keyboard
+
+Set Caps Lock to Ctrl:
+
+  System > Preferences > Keyboard > Layouts > Options... >
+    Ctrl key position: "Make CapsLock an additional Ctrl"
+
+
 == Update System
 
   sudo apt-get update
