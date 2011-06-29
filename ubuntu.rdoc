@@ -6,7 +6,9 @@ To set up TwinView (dual monitors) install the nvidia drivers and then run the c
 
   gksudo nvidia-settings
 
-Launch the Configuration Editor (Alt+F2, then type 'gconf-editor').
+=== Configuration Editor
+
+First, add it to the main menu. Go to System > Preferences > Main Menu > System Tools and put a checkmark next to Configuration Editor. Then launch it.
 
 * To move min/max/close buttons back to the right side of the title bar, change the value:
 
@@ -234,10 +236,6 @@ Update sources and install the latest stable release:
   sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian maverick non-free"
   wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -
   sudo apt-get update && sudo apt-get install virtualbox-3.2
-
-== Add Configuration Editor to Menu
-
-Go to System > Preferences > Main Menu, and select System Tools from the left menu. Put a checkmark next to Configuration Editor.
 
 
 == Restore Data & Settings
