@@ -309,6 +309,7 @@ Dump all MySQL databases, then backup directory contents:
 
   /usr/
     local/
+      bin/*
       sbin/*
     share/
       applications/
