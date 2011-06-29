@@ -174,17 +174,7 @@ Then be sure to follow the instructions for modifying <tt>.bashrc</tt>.
   rvm use 1.8.7 --default
 
   # install some common gems
-  gem install rails mysql2 sqlite3 pg ruby-debug mongrel devise \
-    sinatra RedCloth autotest-rails jekyll hirb wirble
-
-You'll also need to install Capistrano:
-
-  sudo apt-get install capistrano
-
-The following used to be necessary but don't seem to be anymore:
-
-  sudo apt-get install -y bison libssl-dev libreadline5-dev libreadline6-dev
-  sudo apt-get install -y libmysql-ruby1.8 libmysqlclient15-dev libopenssl-ruby
+  gem install rails mysql2 sqlite3 pg ruby-debug
 
 === Passenger
 
