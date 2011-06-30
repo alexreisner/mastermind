@@ -102,7 +102,7 @@ Install Firefox plugins:
 
 === Development Basics
 
-  sudo apt-get install -y build-essential meld rpl curl jpegoptim \
+  sudo apt-get install -y build-essential meld rpl curl jpegoptim s3cmd \
     subversion git-core imagemagick graphicsmagick libxml2-dev libxslt1-dev \
     redis-server w3c-markup-validator librsvg2-bin wkhtmltopdf pdftk
   git config --global push.default matching
