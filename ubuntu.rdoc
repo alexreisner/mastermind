@@ -238,20 +238,6 @@ Update sources and install the latest stable release:
   sudo apt-get update && sudo apt-get install virtualbox-3.2
 
 
-== Restore Data & Settings
-
-=== Databases
-
-Databases should be dumped to /var/backups/mysql.sql.gz
-
-=== Crontab
-
-  sudo crontab -e
-
-  # m h  dom mon dow   command
-  0 3 * * * /usr/local/sbin/mysql_dump_all
-
-
 == Backup
 
 Dump all MySQL databases, then backup directory contents:
@@ -261,10 +247,19 @@ Dump all MySQL databases, then backup directory contents:
   /root
   /usr/local
   /usr/share
-  /var/backups
+  /var
 
 
 == Restore
+
+=== Databases
+
+Restore MySQL and PostgreSQL databases from dumpfiles in /var/backups. If you are installing onto a system with the exact same database versions as before you can instead restore the contents of the directories:
+
+  /var/lib/mysql
+  /var/lib/postgresql/<version>/main
+
+=== Files
 
   ~/
     .backgrounds/*
@@ -291,7 +286,7 @@ Dump all MySQL databases, then backup directory contents:
   ~/.gnome2/
     gedit
     gtksourceview-1.0
-    panel2.d/default/launchers/*    # then drag onto panel
+    panel2.d/default/launchers/*  # then drag onto panel
 
   ~/.local/share/
     hamster-applet/hamster.db
@@ -305,6 +300,7 @@ Dump all MySQL databases, then backup directory contents:
       sites-enabled
     hosts
     jungledisk/jungledisk-settings.xml
+    postgresql/8.4/main/pg_hba.conf
     samba/smb.conf
 
   /usr/
@@ -320,5 +316,7 @@ Dump all MySQL databases, then backup directory contents:
         erb.lang
         yaml.lang
       mime/
-        packages/rails.xml    # then: sudo update-mime-database /usr/share/mime
+        packages/rails.xml  # then: sudo update-mime-database /usr/share/mime
 
+  /var/
+    spool/cron/crontabs/*   # then: chown <username>:crontab for each if necessary
