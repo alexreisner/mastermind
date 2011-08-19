@@ -14,46 +14,6 @@ Lexmark printer drivers:
 
   # Leopard DVD: "Optional Installs" section of setup program
 
-Ruby headers and other useful programming stuff:
-
-  # Leopard DVD (2nd disk): install XCode Tools
-
-Install MySQL:
-
-  # install 32-bit version from MySQL.com
-  sudo cp /usr/local/mysql/support-files/my-small.cnf /etc/my.cnf
-  sudo echo 'character-set-server=utf8' >> /etc/my.cnf
-  sudo echo 'default-collation=utf8_unicode_ci' >> /etc/my.cnf
-
-Install mysql gem:
-
-  sudo env ARCHFLAGS="-arch i386" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config
-
-
-Install PostgreSQL:
-
-  # ports
-  sudo port install postgresql84 postgresql-devel
-
-  # gem
-  gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
-
-Start the database server using:
-
-    /opt/local/lib/postgresql84/bin/postgres -D /opt/local/var/db/postgresql84/defaultdb
-
-or
-    /opt/local/lib/postgresql84/bin/pg_ctl -D /opt/local/var/db/postgresql84/defaultdb -l logfile start
-
-
-Start CouchDB:
-
-  sudo launchctl load -w /opt/local/Library/LaunchDaemons/org.apache.couchdb.plist
-
-Start Redis:
-
-  redis-server /opt/local/etc/redis.conf
-
 
 == Use
 
