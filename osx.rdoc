@@ -15,7 +15,16 @@ Lexmark printer drivers:
   # Leopard DVD: "Optional Installs" section of setup program
 
 
-== Use
+== Software
+
+Install wkhtmltopdf manually (doesn't work with Homebrew and would take too long anyway):
+
+    curl -O http://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.9.9-OS-X.i368
+    mv wkhtmltopdf-0.9.9-OS-X.i368 /usr/local/bin/wkhtmltopdf
+    chmod +x /usr/local/bin/wkhtmltopdf
+
+
+== Tips
 
 Open the GUI diff viewer from the command line:
 
