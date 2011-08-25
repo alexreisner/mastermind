@@ -17,6 +17,10 @@ Lexmark printer drivers:
 
 == Software
 
+Install pdftk via author's OSX installer (no package manager supports it):
+
+    http://www.pdflabs.com/docs/install-pdftk/
+
 Install wkhtmltopdf manually (doesn't work with Homebrew and would take too long anyway):
 
     curl -O http://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.9.9-OS-X.i368
