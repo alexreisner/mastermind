@@ -35,7 +35,8 @@ Disable root SSH login:
   sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
   echo 'UseDNS no' >> /etc/ssh/sshd_config
   echo 'AllowUsers alex' >> /etc/ssh/sshd_config
-  /etc/init.d/ssh reload
+  sudo restart ssh       # for Lucid
+  /etc/init.d/ssh reload # for pre-Lucid
 
 
 == Public Key Authentication
