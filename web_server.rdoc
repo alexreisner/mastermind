@@ -188,7 +188,7 @@ Configure:
   PassengerRoot /usr/local/lib/ruby/gems/1.8/gems/passenger-2.2.9
   PassengerRuby /usr/local/bin/ruby
 
-  sudo vi /etc/apache2/mods-available/passenger.load
+  sudo vi /etc/apache2/mods-available/passenger.conf
 
   # add:
   PassengerPoolIdleTime 0
