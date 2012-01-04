@@ -88,11 +88,11 @@ Yes, seriously, this will delete some-branch. Make sure to include the colon (it
 
 Find the commit that deleted the file:
 
-  git log --diff-filter=D --summary
+  git rev-list -n 1 HEAD -- <file_path>
 
 Once the commit is found, fetch the file from the previous commit:
 
-  git checkout 253b3df^ ohnoes.rb
+  git checkout <commit>^ <file_path>
 
 
 == Rewrite History
