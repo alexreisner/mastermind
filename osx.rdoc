@@ -31,6 +31,10 @@ Install wkhtmltopdf manually (doesn't work with Homebrew and would take too long
     mv wkhtmltopdf-0.9.9-OS-X.i368 /usr/local/bin/wkhtmltopdf
     chmod +x /usr/local/bin/wkhtmltopdf
 
+Install better bash completion behavior:
+
+    brew install bash-completion
+
 
 == Tips
 
