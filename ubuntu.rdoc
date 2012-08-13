@@ -240,7 +240,12 @@ Update sources and install the latest stable release:
 
 == Backup
 
-Dump all MySQL databases, then backup directory contents:
+Dump all MySQL and Postgres databases:
+
+  sudo mysqlsql_dump_all
+  sudo postgresql_dump_all
+
+Backup directory contents:
 
   /etc
   /home          # except torrents, .cache, and .local/share/Trash
