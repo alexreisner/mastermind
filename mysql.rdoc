@@ -35,8 +35,12 @@ Good reference: http://www.informit.com/articles/article.aspx?p=328641&seqNum=3
 
 === Important UTF-8 Defaults (in my.cnf)
 
-  character-set-server=utf8
-  default-collation=utf8_unicode_ci
+  [mysql]
+  default-character-set = utf8
+
+  [mysqld]
+  character-set-server = utf8
+  collation-server = utf8_unicode_ci
 
 
 === Recovering From Big Mistake

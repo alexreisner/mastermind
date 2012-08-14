@@ -14,48 +14,29 @@ Lexmark printer drivers:
 
   # Leopard DVD: "Optional Installs" section of setup program
 
-Ruby headers and other useful programming stuff:
+To set a default $PATH, edit this file:
 
-  # Leopard DVD (2nd disk): install XCode Tools
-
-Install MySQL:
-
-  # install 32-bit version from MySQL.com
-  sudo cp /usr/local/mysql/support-files/my-small.cnf /etc/my.cnf
-  sudo echo 'character-set-server=utf8' >> /etc/my.cnf
-  sudo echo 'default-collation=utf8_unicode_ci' >> /etc/my.cnf
-
-Install mysql gem:
-
-  sudo env ARCHFLAGS="-arch i386" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config
+  /etc/paths
 
 
-Install PostgreSQL:
+== Software
 
-  # ports
-  sudo port install postgresql84 postgresql-devel
+Install pdftk via author's OSX installer (no package manager supports it):
 
-  # gem
-  gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
+    http://www.pdflabs.com/docs/install-pdftk/
 
-Start the database server using:
+Install wkhtmltopdf manually (doesn't work with Homebrew and would take too long anyway):
 
-    /opt/local/lib/postgresql84/bin/postgres -D /opt/local/var/db/postgresql84/defaultdb
+    curl -O http://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.9.9-OS-X.i368
+    mv wkhtmltopdf-0.9.9-OS-X.i368 /usr/local/bin/wkhtmltopdf
+    chmod +x /usr/local/bin/wkhtmltopdf
 
-or
-    /opt/local/lib/postgresql84/bin/pg_ctl -D /opt/local/var/db/postgresql84/defaultdb -l logfile start
+Install better bash completion behavior:
 
-
-Start CouchDB:
-
-  sudo launchctl load -w /opt/local/Library/LaunchDaemons/org.apache.couchdb.plist
-
-Start Redis:
-
-  redis-server /opt/local/etc/redis.conf
+    brew install bash-completion
 
 
-== Use
+== Tips
 
 Open the GUI diff viewer from the command line:
 
