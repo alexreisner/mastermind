@@ -82,8 +82,8 @@ Finish...
 Install various commonly-used packages:
 
   sudo apt-get install -y ubuntu-restricted-extras rar p7zip ntp \
-    compizconfig-settings-manager transmission hamster-applet gimp \
-    xchm inkscape xclip tofrodos ack-grep gedit-plugins vim-gnome
+    compizconfig-settings-manager transmission gimp xchm inkscape \
+    xclip tofrodos ack-grep vim-gnome
 
 Install other common software from .deb packages:
 
