@@ -8,21 +8,25 @@ To set up TwinView (dual monitors) install the nvidia drivers and then run the c
 
 === Configuration Editor
 
-First, add it to the main menu. Go to System > Preferences > Main Menu > System Tools and put a checkmark next to Configuration Editor. Then launch it.
+First, install it:
 
-* To move min/max/close buttons back to the right side of the title bar, change the value:
+  sudo apt-get install gconf-editor
+
+Then launch it.
+
+* To move min/max/close buttons to the right side of the title bar, change the value:
 
   apps > metacity > general
 
     button_layout: menu:minimize,maximize,close
 
-* Set some sensible nautilus defaults:
+* Set some sensible Nautilus defaults:
 
   apps > nautilus > preferences
 
     confirm_trash: false
     date_format: iso
-    default folder_viewer: list_view
+    default_folder_viewer: list_view
 
   apps > nautilus > list_view:
 
@@ -92,6 +96,7 @@ Install other common software from .deb packages:
   * Vimium: https://chrome.google.com/extensions/detail/dbepggeogbaibhgnhhndojpepiihcmeb
 * Skype: http://www.skype.com/download/skype/linux
 * JungleDisk: https://jungledisk.com/downloads/personal/desktop/linux
+* Spotify: http://www.spotify.com/us/download/previews/
 
 Install Firefox plugins:
 
@@ -134,21 +139,6 @@ As of Lucid, the module seems to be configured automatically, but in case not:
 === MySQL
 
   sudo apt-get install mysql-server libmysqlclient-dev
-
-Add to /etc/mysql/my.cnf:
-
-  # under [client]:
-  default-character-set = utf8
-
-  # under [mysqld]:
-  character-set-server = utf8
-  collation-server = utf8_unicode_ci
-  default-collation = utf8_unicode_ci
-
-And restart the server:
-
-  sudo restart mysql             # for Lucid
-  sudo /etc/init.d/mysql restart # for pre-Lucid
 
 === PostgreSQL
 
@@ -225,18 +215,17 @@ Update sources and install the latest stable release:
 === png2ico
 
   cd /usr/local/src
-  wget http://www.winterdrache.de/freeware/png2ico/data/png2ico-src-2002-12-08.tar.gz
-  tar xf png2ico-src-2002-12-08.tar.gz
+  sudo wget http://www.winterdrache.de/freeware/png2ico/data/png2ico-src-2002-12-08.tar.gz
+  sudo tar xf png2ico-src-2002-12-08.tar.gz
   cd png2ico-src-2002-12-08
   make
   cp png2ico /usr/local/bin/
 
 === VirtualBox
 
-  sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian maverick non-free"
   wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -
-  sudo apt-get update && sudo apt-get install virtualbox-3.2
-
+  sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian precise contrib" >> /etc/apt/sources.list'
+  sudo apt-get update && sudo apt-get install virtualbox-4.1
 
 == Backup
 
@@ -259,7 +248,12 @@ Backup directory contents:
 
 === Databases
 
-Restore MySQL and PostgreSQL databases from dumpfiles in /var/backups. If you are installing onto a system with the exact same database versions as before you can instead restore the contents of the directories:
+Restore MySQL and PostgreSQL databases from dumpfiles in /var/backups:
+
+  mysql -uroot < mysql.sql
+  psql -f postgresql.sql postgres
+
+If you are installing onto a system with the exact same database versions as before you can instead restore the contents of the directories:
 
   /var/lib/mysql
   /var/lib/postgresql/<version>/main
@@ -269,32 +263,24 @@ Restore MySQL and PostgreSQL databases from dumpfiles in /var/backups. If you ar
   ~/
     .backgrounds/*
     .bashrc
-    .bash_credentials
+    .credentials
     .fonts/*
     .gemrc
-    .git/*
     .gitconfig
     .gtk-bookmarks
-    .gvimrc
+    .heroku
     .icons/*
-    .irbrc
     .rvmrc
+    .s3cfg
     .ssh
-    .subversion/*
     .vimrc
     .vim/*
+    .VirtualBox (?)
 
   ~/.gconf/apps/
-    gedit-2
     gnome-terminal
 
-  ~/.gnome2/
-    gedit
-    gtksourceview-1.0
-    panel2.d/default/launchers/*  # then drag onto panel
-
   ~/.local/share/
-    hamster-applet/hamster.db
     rhythmbox
 
   /etc/
@@ -305,7 +291,8 @@ Restore MySQL and PostgreSQL databases from dumpfiles in /var/backups. If you ar
       sites-enabled
     hosts
     jungledisk/jungledisk-settings.xml
-    postgresql/8.4/main/pg_hba.conf
+    mysql/conf.d/utf8.cnf
+    postgresql/9.1/main/pg_hba.conf
     samba/smb.conf
 
   /usr/
@@ -314,14 +301,6 @@ Restore MySQL and PostgreSQL databases from dumpfiles in /var/backups. If you ar
       include/*
       lib/*
       sbin/*
-    share/
-      applications/
-        gvim.desktop
-      gtksourceview-2.0/language-specs/
-        erb.lang
-        yaml.lang
-      mime/
-        packages/rails.xml  # then: sudo update-mime-database /usr/share/mime
 
   /var/
     spool/cron/crontabs/*   # then: chown <username>:crontab for each if necessary
