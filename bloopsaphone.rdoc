@@ -1,0 +1,14 @@
+= Bloopsaphone
+
+Why's great 8-bit sound-making gem.
+
+== Installation on Ubuntu (Maverick)
+
+  sudo apt-get install portaudio19-dev
+  gem install bloopsaphone
+
+== Installation on OS X (10.5)
+
+  sudo port install portaudio
+  sudo gem install bloopsaphone -- --with-opt-lib=/opt/local/lib --with-opt-include=/opt/local/include
+
