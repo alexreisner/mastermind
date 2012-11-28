@@ -16,3 +16,7 @@ Edit this file:
 
 and then restart finder by Alt-right-clicking Finder in the dock and clicking "Relaunch". (From: http://www.mikesel.info/show-hidden-files-mac-os-x-10-7-lion/)
 
+== To rename a disk partition:
+
+  /usr/sbin/diskutil rename oldname newname
+
