@@ -123,7 +123,7 @@ Install common gems:
 
     gem install bundler autotest-rails debugger
 
-=== Chadwick
+### Chadwick
 
     cd /usr/local/src
     sudo wget http://downloads.sourceforge.net/project/chadwick/chadwick-0.5/0.5.2/chadwick-0.5.2.tar.gz
@@ -133,7 +133,7 @@ Install common gems:
     make
     sudo make install
 
-=== To-do
+### To-do
 
 Still need to set up the following:
 
@@ -147,7 +147,7 @@ Backup
 
 Simple. Use Time Machine.
 
-However, we should also dump all MySQL and Postgres databases regularly, using cron:
+However, we should also dump all MySQL and Postgres databases regularly, using cron (`crontab -e` to edit):
 
     10 3 * * * pg_dumpall -U postgres | gzip > /Users/alex/backups/postgresql.sql.gz
     20 3 * * * mysqldump -A -u root | gzip > /Users/alex/backups/mysql.sql.gz
@@ -158,7 +158,7 @@ Restore
 
 ### Databases
 
-Restore MySQL and PostgreSQL databases from dumpfiles in /var/backups:
+Restore MySQL and PostgreSQL databases from dumpfiles in `/var/backups`:
 
     mysql -uroot < mysql.sql
     psql -f postgresql.sql postgres
@@ -168,7 +168,7 @@ If you are installing onto a system with the exact same database versions as bef
     /var/lib/mysql
     /var/lib/postgresql/<version>/main
 
-Tell MySQL to use UTF-8 by adding /etc/my.cnf that looks like this:
+Tell MySQL to use UTF-8 by adding an `/etc/my.cnf` that looks like this:
 
     [mysqld]
     character-set-server = utf8
@@ -191,7 +191,6 @@ Tell MySQL to use UTF-8 by adding /etc/my.cnf that looks like this:
       .ssh
 
       # also symlinks like .vimrc, .vim/*, and .bash* into the ~/dotfiles repo
-
 
     ~/Library/Preferences/
       com.googlecode.iterm2.plist
