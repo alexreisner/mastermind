@@ -1,4 +1,4 @@
-OS X Setup (Mountain Lion)
+OS X Setup (10.8 Mountain Lion)
 ==========================
 
 System Config
@@ -6,20 +6,20 @@ System Config
 
 Modify /etc/paths so it looks like this:
 
-  /usr/local/bin
-  /usr/bin
-  /bin
-  /usr/local/sbin
-  /usr/sbin
-  /sbin
+    /usr/local/bin
+    /usr/bin
+    /bin
+    /usr/local/sbin
+    /usr/sbin
+    /sbin
 
 Prevent writing of `.DS_Store` files on network drives:
 
-  defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+    defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 
 Prevent TextMate from creating extra file on network drives for storing extended attributes:
 
-  defaults write com.macromates.textmate OakDocumentDisableFSMetaData 1
+    defaults write com.macromates.textmate OakDocumentDisableFSMetaData 1
 
 In Time Machine preferences > Options, turn off "Lock documents _ after last edit"
 
@@ -126,13 +126,13 @@ Install common gems:
 
 === Chadwick
 
-  cd /usr/local/src
-  sudo wget http://downloads.sourceforge.net/project/chadwick/chadwick-0.5/0.5.2/chadwick-0.5.2.tar.gz
-  sudo tar xf chadwick-0.5.2.tar.gz
-  cd chadwick-0.5.2
-  ./configure
-  make
-  sudo make install
+    cd /usr/local/src
+    sudo wget http://downloads.sourceforge.net/project/chadwick/chadwick-0.5/0.5.2/chadwick-0.5.2.tar.gz
+    sudo tar xf chadwick-0.5.2.tar.gz
+    cd chadwick-0.5.2
+    ./configure
+    make
+    sudo make install
 
 === To-do
 
@@ -150,8 +150,8 @@ Simple. Use Time Machine.
 
 However, we should also dump all MySQL and Postgres databases regularly, using cron:
 
-  10 3 * * * pg_dumpall -U postgres | gzip > /Users/alex/backups/postgresql.sql.gz
-  20 3 * * * mysqldump -A -u root | gzip > /Users/alex/backups/mysql.sql.gz
+    10 3 * * * pg_dumpall -U postgres | gzip > /Users/alex/backups/postgresql.sql.gz
+    20 3 * * * mysqldump -A -u root | gzip > /Users/alex/backups/mysql.sql.gz
 
 
 Restore
@@ -161,39 +161,39 @@ Restore
 
 Restore MySQL and PostgreSQL databases from dumpfiles in /var/backups:
 
-  mysql -uroot < mysql.sql
-  psql -f postgresql.sql postgres
+    mysql -uroot < mysql.sql
+    psql -f postgresql.sql postgres
 
 If you are installing onto a system with the exact same database versions as before you can instead restore the contents of the directories:
 
-  /var/lib/mysql
-  /var/lib/postgresql/<version>/main
+    /var/lib/mysql
+    /var/lib/postgresql/<version>/main
 
 Tell MySQL to use UTF-8 by adding /etc/my.cnf that looks like this:
 
-  [mysqld]
-  character-set-server = utf8
-  default-character-set = utf8
+    [mysqld]
+    character-set-server = utf8
+    default-character-set = utf8
 
-  [mysql]
-  default-character-set = utf8
+    [mysql]
+    default-character-set = utf8
 
-  [client]
-  default-character-set=utf8
+    [client]
+    default-character-set=utf8
 
 ### Files
 
-  ~/
-    .bash_profile
-    .credentials
-    .gitconfig
-    .heroku
-    .s3cfg
-    .ssh
+    ~/
+      .bash_profile
+      .credentials
+      .gitconfig
+      .heroku
+      .s3cfg
+      .ssh
 
-    # also symlinks like .vimrc, .vim/*, and .bash* into the ~/dotfiles repo
+      # also symlinks like .vimrc, .vim/*, and .bash* into the ~/dotfiles repo
 
 
-  ~/Library/Preferences/
-    com.googlecode.iterm2.plist
+    ~/Library/Preferences/
+      com.googlecode.iterm2.plist
 
