@@ -1,43 +1,18 @@
-= OS X (Leopard)
+= OS X (Mountain Lion)
 
-== Admin
+== To set a default $PATH
 
-Prevent writing of <tt>.DS_Store</tt> files on network drives:
-
-  defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-
-Prevent TextMate from creating extra file on network drives for storing extended attributes:
-
-  defaults write com.macromates.textmate OakDocumentDisableFSMetaData 1
-
-Lexmark printer drivers:
-
-  # Leopard DVD: "Optional Installs" section of setup program
-
-To set a default $PATH, edit this file:
+Edit this file:
 
   /etc/paths
 
-
-== Software
-
-Install pdftk via author's OSX installer (no package manager supports it):
-
-    http://www.pdflabs.com/docs/install-pdftk/
-
-Install wkhtmltopdf manually (doesn't work with Homebrew and would take too long anyway):
-
-    curl -O http://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.9.9-OS-X.i368
-    mv wkhtmltopdf-0.9.9-OS-X.i368 /usr/local/bin/wkhtmltopdf
-    chmod +x /usr/local/bin/wkhtmltopdf
-
-Install better bash completion behavior:
-
-    brew install bash-completion
-
-
-== Tips
-
-Open the GUI diff viewer from the command line:
+== Open the GUI diff viewer from the command line:
 
   opendiff <file1> <file2>
+
+== Show hidden files in Finder:
+
+  defaults write com.apple.Finder AppleShowAllFiles YES
+
+and then restart finder by Alt-right-clicking Finder in the dock and clicking "Relaunch". (From: http://www.mikesel.info/show-hidden-files-mac-os-x-10-7-lion/)
+
