@@ -33,16 +33,15 @@ Install program, mount monstroso, mount active dir to sync.
 General Software
 ----------------
 
-* Google Chrome
-* Firefox
+* [Google Chrome](http://www.google.com/chrome)
+* [Firefox](http://www.firefox.com/)
   * [Firebug](http://getfirebug.com)
   * [YSlow](http://developer.yahoo.com/yslow)
   * [Live HTTP Headers](https://addons.mozilla.org/en-US/firefox/addon/3829)
-* Transmission
-* VLC
-* Spotify
+* [Transmission](http://www.transmissionbt.com)
+* [VLC](http://www.videolan.org/vlc)
+* [Spotify](http://www.spotify.com/)
 * [ScanSnap S1300 software](http://www.fujitsu.com/global/support/computing/peripheral/scanners/software/s1300m-setup.html)
-* inkscape/illustrator/photoshop
 
 
 Development Software
@@ -50,11 +49,11 @@ Development Software
 
 Install manually:
 
-* XCode (see App Store)
-* Command Line Tools for Xcode (see http://connect.apple.com/)
+* XCode (via App Store)
+* [Command Line Tools for Xcode](http://connect.apple.com/)
 * [iTerm2](http://www.iterm2.com/)
 * [MacVim](http://code.google.com/p/macvim/)
-* Homebrew
+* [Homebrew](http://mxcl.github.com/homebrew/)
 
 Then:
 
