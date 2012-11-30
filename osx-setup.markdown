@@ -76,19 +76,15 @@ Be sure to follow post-install instructions:
 
     brew install sqlite mysql postgresql mongodb
 
-After installing PostgreSQL I was unable to connect through a socket (though I could connect through via localhost). To fix it:
+After installing PostgreSQL I was unable to connect through a socket (though I could connect through via localhost). To fix it, in `/usr/local/var/postgres/postgresql.conf` set:
 
-    cd /var
+    unix_socket_directory = '/tmp'
+
+and restart the server. Then:
+
     sudo mkdir /var/pgsql_socket
     sudo chown alex /var/pgsql_socket
-
-and then in `/usr/local/var/postgres/postgresql.conf` set:
-
-    unix_socket_directory = '/var/pgsql_socket'
-
-and restart the server. If your Rails apps try to connect to the socket at `/tmp`, just make a symlink:
-
-    ln -s /var/pgsql_socket/.s.PGSQL.5432 /tmp/
+    ln -s /tmp/.s.PGSQL.5432 /var/pgsql_socket/
 
 ### Ruby
 
