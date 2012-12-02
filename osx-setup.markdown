@@ -24,33 +24,10 @@ Prevent TextMate from creating extra file on network drives for storing extended
 In Time Machine preferences > Options, turn off "Lock documents _ after last edit"
 
 
-NFS Shares
-----------
-
-As described by [YourMacGuy](http://yourmacguy.wordpress.com/2012/06/29/osx-automount/), create a file describing the share:
-
-    sudo mkdir /etc/automounts
-    sudo vi /etc/automounts/worf
-
-using this description:
-
-    *        -fstype=nfs,rw,bg,hard,intr,tcp 192.168.0.100:/&
-
-Then add to `/etc/auto_master`:
-
-    /mnt/worf /etc/automounts/worf
-
-and run:
-
-    sudo automount -vc
-
-This will create the mount points (at `/mnt/worf/*`, but nothing will actually be visible until you try to traverse directories, using Finder or `cd`.
-
-
 JungleDisk
 ----------
 
-Install program, mount monstroso, mount `active` dir to sync.
+Install program, mount monstroso, mount active dir to sync.
 
 
 General Software
