@@ -42,6 +42,9 @@ General Software
 * [VLC](http://www.videolan.org/vlc)
 * [Spotify](http://www.spotify.com/)
 * [ScanSnap S1300 software](http://www.fujitsu.com/global/support/computing/peripheral/scanners/software/s1300m-setup.html)
+* [VirtualBox](http://virtualbox.org/)
+  * [Windows images](https://github.com/xdissent/ievms)
+  * [Ubuntu images](http://virtualboxes.org/images/ubuntu/)
 
 
 Development Software
