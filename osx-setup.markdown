@@ -23,6 +23,18 @@ Prevent TextMate from creating extra file on network drives for storing extended
 
 In Time Machine preferences > Options, turn off "Lock documents _ after last edit"
 
+    # Make ~/Library folder permanently visible.
+    chflags nohidden ~/Library
+
+    # Speed up Mission Control animations
+    defaults write com.apple.dock expose-animation-duration -float 0.1
+
+    # Speed up sheets and sliding dialogues
+    defaults write -g NSWindowResizeTime .001
+
+    # Enable text selection in Quick Look
+    defaults write com.apple.finder QLEnableTextSelection -bool TRUE
+
 
 JungleDisk
 ----------
