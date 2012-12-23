@@ -13,15 +13,11 @@ Modify /etc/paths so it looks like this:
     /usr/sbin
     /sbin
 
-Prevent writing of `.DS_Store` files on network drives:
+Make changes to various UI and Finder settings:
 
+    # Prevent writing of `.DS_Store` files on network drives
+    # (from http://support.apple.com/kb/HT1629):
     defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-
-Prevent TextMate from creating extra file on network drives for storing extended attributes:
-
-    defaults write com.macromates.textmate OakDocumentDisableFSMetaData 1
-
-In Time Machine preferences > Options, turn off "Lock documents _ after last edit"
 
     # Make ~/Library folder permanently visible.
     chflags nohidden ~/Library
@@ -34,6 +30,8 @@ In Time Machine preferences > Options, turn off "Lock documents _ after last edi
 
     # Enable text selection in Quick Look
     defaults write com.apple.finder QLEnableTextSelection -bool TRUE
+
+In Time Machine preferences > Options, turn off "Lock documents _ after last edit"
 
 
 JungleDisk
