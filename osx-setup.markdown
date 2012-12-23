@@ -158,8 +158,8 @@ Simple. Use Time Machine.
 
 However, we should also dump all MySQL and Postgres databases regularly, using cron (`crontab -e` to edit):
 
-    10 3 * * * pg_dumpall -U postgres | gzip > /Users/alex/backups/postgresql.sql.gz
-    20 3 * * * mysqldump -A -u root | gzip > /Users/alex/backups/mysql.sql.gz
+    10 3 * * * /usr/local/bin/pg_dumpall -U postgres | gzip > /Users/alex/backups/postgresql.sql.gz
+    20 3 * * * /usr/local/bin/mysqldump -A -u root | gzip > /Users/alex/backups/mysql.sql.gz
 
 
 Restore
