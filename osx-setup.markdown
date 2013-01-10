@@ -71,7 +71,7 @@ Install manually:
 
 Then:
 
-    brew install ack rpl curl s3cmd imagemagick graphicsmagick \
+    brew install tree ack rpl curl s3cmd imagemagick graphicsmagick \
       redis wget bash-completion meld
 
 Install pdftk via author's OSX installer (not included in Homebrew):
