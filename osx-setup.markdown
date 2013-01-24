@@ -182,7 +182,6 @@ Tell MySQL to use UTF-8 by adding an `/etc/my.cnf` that looks like this:
 
     [mysqld]
     character-set-server = utf8
-    default-character-set = utf8
 
     [mysql]
     default-character-set = utf8
