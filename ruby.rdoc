@@ -20,32 +20,3 @@ Publish to RubyGems.org:
   gem push gemname-1.0.0
 
 
-== Missing Net or TimeoutError on Rails
-
-If you find yourself having to manually require Net or TimeoutError, make sure you're not skipping ActiveResource in config/environment.rb.
-
-
-== Rails 2 script/runner
-
-To specify environment for script/runner:
-
-  RAILS_ENV=test script/runner blah_blah_blah
-
-
-== Rack HTTP Status Codes
-
-Status code messages are taken from here:
-
-http://www.iana.org/assignments/http-status-codes
-
-In Rails 2.3:
-
-  actionpack-2.3.10/lib/action_controller/status_codes.rb
-
-In Rails 3 (Rack):
-
-  rack-1.2.1/lib/rack/utils.rb
-
-When specifying a status (eg, in head or render method) you can give the number or a symbolized version of the message (lowercased, spaces replaced with underscores).
-
-
