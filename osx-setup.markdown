@@ -204,3 +204,9 @@ Tell MySQL to use UTF-8 by adding an `/etc/my.cnf` that looks like this:
     ~/Library/Preferences/
       com.googlecode.iterm2.plist
 
+### When Restoring System from Time Machine Backup
+
+Some things are not properly restored, namely:
+
+1. /etc/paths
+2. Homebrew installation is often messed up.
