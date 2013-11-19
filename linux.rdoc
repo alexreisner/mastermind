@@ -26,6 +26,12 @@ Build a PDF with pages from two documents:
 
   pdftk A=1.pdf B=2.pdf cat A B1-3 output comp.pdf
 
+== PDF To Images
+
+Extract each page in input.pdf to image names output-i.png:
+
+  convert -density 150 -quality 100 -resize 800x input.pdf output.png
+
 == Recursively Delete Empty Directories
 
   find . -depth -type d -empty -exec rmdir {} \;
