@@ -33,6 +33,10 @@ Make changes to various UI and Finder settings:
 
 In Time Machine preferences > Options, turn off "Lock documents _ after last edit"
 
+Get rid of server connection interrupted dialog:
+
+    sudo mv /System/Library/LoginPlugins/FSDisconnect.loginPlugin /System
+
 
 JungleDisk
 ----------
