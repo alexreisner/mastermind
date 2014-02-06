@@ -53,6 +53,17 @@ If you do something bad (eg, accidentally delete the 'mysql' table), have to re-
 
 == Optimization
 
+===
+
+Get the size, on disk, of each table in a database:
+
+  SELECT table_name AS "Tables",
+    ROUND(((data_length + index_length) / 1024 / 1024), 2) "Size in MB"
+  FROM information_schema.TABLES
+  WHERE table_schema = "<database>"
+  ORDER BY (data_length + index_length) DESC;
+
+
 === Memory Use
 
 The amount of memory consumed by the MySQL server is approximately (in KB):
@@ -100,7 +111,7 @@ select_type
   DERIVED               Derived table SELECT (subquery in FROM clause)
   UNCACHEABLE SUBQUERY  A subquery for which the result cannot be cached and must
                         be re-evaluated for each row of the outer query
-                        
+
 type
 
   system
