@@ -35,7 +35,7 @@ In Time Machine preferences > Options, turn off "Lock documents _ after last edi
 
 Get rid of server connection interrupted dialog:
 
-    sudo mv /System/Library/LoginPlugins/FSDisconnect.loginPlugin /System
+    sudo mv /System/Library/LoginPlugins/FSDisconnect.loginPlugin /System/
 
 
 JungleDisk
